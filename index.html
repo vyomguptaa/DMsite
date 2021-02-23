@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>Dream Merchants</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="#" class="logo">Dream Merchants</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#welcome" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#about2">Our Domains</a></li>
+                            <li class="scroll-to-section"><a href="#services">Blogs</a></li>
+                            <li class="scroll-to-section"><a href="#frequently-question">Events</a></li>
+                            
+                            <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+        </div>
+    </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+
+        <!-- ***** Header Text Start ***** -->
+        <style>
+            #text-1, #text-2 {
+    margin-top:30px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight:500;
+    line-height: 2;
+    text-transform:uppercase;
+    color:#f1f1f1;
+    padding:0 5px;
+}
+
+#text-1 { 
+  animation: showup 7s infinite;
+}
+
+#text-2 {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+#text-2-span {
+  margin-left:-200px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:auto;}
+    80% {opacity:1;}
+    100% {opacity:0;width:auto;}
+}
+       </style>
+
+       <style>
+       .large-header {
+        position: relative;
+        width: 100%;
+        background: #333;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        z-index: 1;
+    }
+    
+    #large-header {
+        background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+    }
+    </style>
+     <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <div class="header-text">
+            <div class="container">
+               
+                <div class="row">
+                    <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <h1>Welcome to <strong>DREAM MERCHANTS VIT</strong></h1>
+                        <div id="text-1">Explore </div> 
+                        <div id="text-2"> 
+                          <span id="text-2-span">infinity with us</span>
+                        </div>
+                     
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                        <img src="assets/images/slider-icon.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <script>
+            (function() {
+            
+                var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+            
+                // Main
+                initHeader();
+                initAnimation();
+                addListeners();
+            
+                function initHeader() {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    target = {x: width/2, y: height/2};
+            
+                    largeHeader = document.getElementById('large-header');
+                    largeHeader.style.height = height+'px';
+            
+                    canvas = document.getElementById('demo-canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx = canvas.getContext('2d');
+            
+                    // create points
+                    points = [];
+                    for(var x = 0; x < width; x = x + width/20) {
+                        for(var y = 0; y < height; y = y + height/20) {
+                            var px = x + Math.random()*width/20;
+                            var py = y + Math.random()*height/20;
+                            var p = {x: px, originX: px, y: py, originY: py };
+                            points.push(p);
+                        }
+                    }
+            
+                    // for each point find the 5 closest points
+                    for(var i = 0; i < points.length; i++) {
+                        var closest = [];
+                        var p1 = points[i];
+                        for(var j = 0; j < points.length; j++) {
+                            var p2 = points[j]
+                            if(!(p1 == p2)) {
+                                var placed = false;
+                                for(var k = 0; k < 5; k++) {
+                                    if(!placed) {
+                                        if(closest[k] == undefined) {
+                                            closest[k] = p2;
+                                            placed = true;
+                                        }
+                                    }
+                                }
+            
+                                for(var k = 0; k < 5; k++) {
+                                    if(!placed) {
+                                        if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                                            closest[k] = p2;
+                                            placed = true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        p1.closest = closest;
+                    }
+            
+                    // assign a circle to each point
+                    for(var i in points) {
+                        var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
+                        points[i].circle = c;
+                    }
+                }
+            
+                // Event handling
+                function addListeners() {
+                    if(!('ontouchstart' in window)) {
+                        window.addEventListener('mousemove', mouseMove);
+                    }
+                    window.addEventListener('scroll', scrollCheck);
+                    window.addEventListener('resize', resize);
+                }
+            
+                function mouseMove(e) {
+                    var posx = posy = 0;
+                    if (e.pageX || e.pageY) {
+                        posx = e.pageX;
+                        posy = e.pageY;
+                    }
+                    else if (e.clientX || e.clientY)    {
+                        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+                    }
+                    target.x = posx;
+                    target.y = posy;
+                }
+            
+                function scrollCheck() {
+                    if(document.body.scrollTop > height) animateHeader = false;
+                    else animateHeader = true;
+                }
+            
+                function resize() {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    largeHeader.style.height = height+'px';
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+            
+                // animation
+                function initAnimation() {
+                    animate();
+                    for(var i in points) {
+                        shiftPoint(points[i]);
+                    }
+                }
+            
+                function animate() {
+                    if(animateHeader) {
+                        ctx.clearRect(0,0,width,height);
+                        for(var i in points) {
+                            // detect points in range
+                            if(Math.abs(getDistance(target, points[i])) < 4000) {
+                                points[i].active = 0.3;
+                                points[i].circle.active = 0.6;
+                            } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+                                points[i].active = 0.1;
+                                points[i].circle.active = 0.3;
+                            } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+                                points[i].active = 0.02;
+                                points[i].circle.active = 0.1;
+                            } else {
+                                points[i].active = 0;
+                                points[i].circle.active = 0;
+                            }
+            
+                            drawLines(points[i]);
+                            points[i].circle.draw();
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+            
+                function shiftPoint(p) {
+                    TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
+                        y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
+                        onComplete: function() {
+                            shiftPoint(p);
+                        }});
+                }
+            
+                // Canvas manipulation
+                function drawLines(p) {
+                    if(!p.active) return;
+                    for(var i in p.closest) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p.closest[i].x, p.closest[i].y);
+                        ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
+                        ctx.stroke();
+                    }
+                }
+            
+                function Circle(pos,rad,color) {
+                    var _this = this;
+            
+                    // constructor
+                    (function() {
+                        _this.pos = pos || null;
+                        _this.radius = rad || null;
+                        _this.color = color || null;
+                    })();
+            
+                    this.draw = function() {
+                        if(!_this.active) return;
+                        ctx.beginPath();
+                        ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+                        ctx.fillStyle = 'rgba(156,217,249,'+ _this.active+')';
+                        ctx.fill();
+                    };
+                }
+            
+                // Util
+                function getDistance(p1, p2) {
+                    return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+                }
+                
+            })();
+        
+       var text1 = ["Agile", "Digital", "Escape"];
+var text2 = ["transformation", "Evolution", "into amazing "];
+var count = 2;
+setInterval(() => {
+  count--;
+  document.getElementById('text-1').innerHTML= text1[count];
+  document.getElementById('text-2-span').innerHTML= text2[count];
+  if(count == 0){
+    count = 3;
+  }
+}, 7000);
+</script>
+
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading">
+                        <h5>About Us</h5>
+                    </div>
+                    <div class="left-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#about2" class="main-button">Discover More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about2">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>Our Domains</h5>
+                    </div>
+                    <p>Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit. Aenean in feugiat purus.</p>
+                    <ul>
+                        <li>
+                            <img src="assets/images/about-icon-01.png" alt="">
+                            <div class="text">
+                                <h6>Financial Events</h6>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/about-icon-02.png" alt="">
+                            <div class="text">
+                                <h6>Editorial</h6>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/about-icon-03.png" alt="">
+                            <div class="text">
+                                <h6>Design</h6>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ab</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Features Small Start ***** -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-01.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">First Box Service</h5>
+                        <p>Aenean vulputate massa sed neque consectetur, ac fringilla quam aliquet. Sed a enim nec eros tempor cursus at id libero.</p>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-02.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Second Box Title</h5>
+                        <p>Pellentesque vitae urna ut nisi viverra tristique quis at dolor. In non sodales dolor, id egestas quam. Aliquam erat volutpat. </p>
+                        <a href="#" class="main-button">Discover More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-03.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Third Title Box</h5>
+                        <p>Quisque finibus libero augue, in ultrices quam dictum id. Aliquam quis tellus sit amet urna tincidunt bibendum.</p>
+                        <a href="#" class="main-button">More Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-02.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Fourth Service Box</h5>
+                        <p>Fusce sollicitudin feugiat risus, tempus faucibus arcu blandit nec. Duis auctor dolor eu scelerisque vestibulum.</p>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-01.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Fifth Service Title</h5>
+                        <p>Curabitur aliquam eget tellus id porta. Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit.</p>
+                        <a href="#" class="main-button">Discover</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-03.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Sixth Box Title</h5>
+                        <p>Ut nibh velit, aliquam vitae pellentesque nec, convallis vitae lacus. Aliquam porttitor urna ut pellentesque.</p>
+                        <a href="#" class="main-button">Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="assets/images/service-icon-01.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Seventh Title Box</h5>
+                        <p>Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien sit amet, ultrices malesuada odio. Donec non quam.</p>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+
+    <!-- ***** Frequently Question Start ***** -->
+    <section class="section" id="frequently-question">
+        <div class="container">
+            
+
+            <section id="cards">
+                <div class="zcontainer py-2">
+                    <div class="row pb-4">
+                        <div class="col-12 text-center">
+                            <div class="display-3">Our Team</div>
+                        </div>
+                    </div>
+                    <!-- cards -->
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="user-picture">
+                                        <img src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130" class="shadow-sm rounded-circle" height="130" width="130" />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">Carry Johnshon</h5>
+                                        <p class=" text-capitalize text-muted small blockquote-footer">Web developer</p>
+                                        <div class="small">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                        </div>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum
+                                            quia commodi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="user-picture">
+                                        <img src="https://images.unsplash.com/photo-1582003457856-20898dd7e1ea?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130" class="shadow-sm rounded-circle" height="130" width="130" />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">Alex Carry</h5>
+                                        <p class=" text-capitalize text-muted small blockquote-footer">Web developer</p>
+                                        <div class="small">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                        </div>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum
+                                            quia commodi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="user-picture">
+                                        <img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130" class="shadow-sm rounded-circle" height="130" width="130" />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">John Smith</h5>
+                                        <p class=" text-capitalize text-muted small blockquote-footer">Web developer</p>
+                                        <div class="small">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                        </div>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum
+                                            quia commodi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="user-picture">
+                                        <img src="https://i.picsum.photos/id/836/130/130.jpg?hmac=Sot_REUw5W-XSuE6FmCjT9JenhZfiNqZYs3AQbfrZsc" class="shadow-sm rounded-circle" height="130" width="130" />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">George Alex</h5>
+                                        <p class=" text-capitalize text-muted small blockquote-footer">Web developer</p>
+                                        <div class="small">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                        </div>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum
+                                            quia commodi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="user-picture">
+                                        <img src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130" class="shadow-sm rounded-circle" height="130" width="130" />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">Carry Johnshon</h5>
+                                        <p class=" text-capitalize text-muted small blockquote-footer">Web developer</p>
+                                        <div class="small">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                        </div>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum
+                                            quia commodi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="user-picture">
+                                        <img src="https://images.unsplash.com/photo-1582003457856-20898dd7e1ea?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130" class="shadow-sm rounded-circle" height="130" width="130" />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">Alex Carry</h5>
+                                        <p class=" text-capitalize text-muted small blockquote-footer">Web developer</p>
+                                        <div class="small">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star-half-alt text-warning"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                            <i class="fas fa-star text-light"></i>
+                                        </div>
+                                        <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum
+                                            quia commodi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /cards -->
+            </section>
+    <!-- ***** Frequently Question End ***** -->
+<!-- ***** Section Title Start ***** -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="section-heading">
+            <h2>Our Contact Details</h2>
+        </div>
+    </div>
+    <div class="offset-lg-3 col-lg-6">
+        <div class="section-heading">
+            <p>You can refer to the map and contact form.</p>
+        </div>
+    </div>
+</div>
+<!-- ***** Section Title End ***** -->
+
+    <!-- ***** Contact Us Start ***** -->
+    <section class="section" id="contact-us">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- ***** Contact Map Start ***** -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div id="map">
+                      <!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- ***** Contact Map End ***** -->
+
+                <!-- ***** Contact Form Start ***** -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="post">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Full Name" required="" class="contact-field">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" placeholder="E-mail" required="" class="contact-field">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" id="message" placeholder="Your Message" required="" class="contact-field"></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button">Send It</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+
+  
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <p class="copyright">Copyright &copy; 2021 Dream Merchants 
+                
+                .</p>
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>
